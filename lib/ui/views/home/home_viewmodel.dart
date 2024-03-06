@@ -1,6 +1,9 @@
 part of "home_view.dart";
 
 class HomeViewModel extends BaseViewModel {
-  void init() {}
+  final log =
+  void init() {
+
+  }
   void disposeView() {}
 }
