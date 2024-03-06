@@ -26,3 +26,4 @@ export 'package:bewell/app/app.bottomsheets.dart';
 export 'package:bewell/app/app.dialogs.dart';
 export 'package:bewell/app/app.locator.dart';
 export 'package:bewell/app/app.router.dart';
+export 'package:bewell/app/app.logger.dart';
