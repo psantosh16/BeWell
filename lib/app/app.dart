@@ -33,5 +33,4 @@ import 'package:stacked_services/stacked_services.dart';
 )
 class App {}
 
-
 //dart run build_runner build --delete-conflicting-outputs
