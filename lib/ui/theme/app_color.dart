@@ -14,13 +14,13 @@ extension ColorSchemeExtension on ColorScheme {
   Color get text => brightness == Brightness.dark ? white : black;
 
   // Navigation Bar
-  Color get bottomNavBarBg => brightness == Brightness.dark ? black : white;
+  Color get bottomNavBarBg => const Color(0xFFC6BAFF);
   Color get unSelectedBottomNavIcon => const Color(0xFFA0A0A0);
   Color get selectedBottomNavIcon => primaryColor;
   Color get selectedBottomNavIconbg => primaryColor.withOpacity(0.4);
 
   // Other
-  Color get primaryColor => const Color(0xFF379AF7);
+  Color get primaryColor => const Color(0xFF574FF0);
   Color get scaffoldColor =>
       brightness == Brightness.dark ? const Color(0xFF111111) : scaffoldGrey;
   Color get iconColor => brightness == Brightness.dark

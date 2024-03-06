@@ -21,14 +21,12 @@ class BottomNavActiveIcon extends ViewModelWidget<BottomNavViewModel> {
         child: Column(
           children: [
             const Spacer(),
-            Icon(
-              Icons.abc,
-              size: 30.h,
+            SvgPicture.asset(
+              icon,
+              height: 30.h,
+              colorFilter:
+                  ColorFilter.mode(context.colorScheme.text, BlendMode.srcIn),
             ),
-            // SvgPicture.asset(
-            //   icon,
-            //   height: 30.h,
-            // ),
             Text(
               text,
               style: constraints.maxWidth >= 600
@@ -67,35 +65,30 @@ class BottomNavInActiveIcon extends ViewModelWidget<BottomNavViewModel> {
       return Container(
         width: constraints.maxWidth,
         height: constraints.maxWidth * 0.60,
-        // MediaQuery.of(context).size.height * 0.065,
         decoration: const BoxDecoration(
           color: Colors.transparent,
         ),
         child: Column(
           children: [
             const Spacer(),
-            // SvgPicture.asset(
-            //   icon,
-            //   height: 30.h,
-            //   colorFilter:
-            //       ColorFilter.mode(context.colorScheme.text, BlendMode.srcIn),
-            // ),
-            Icon(
-              Icons.abc_outlined,
-              size: 30.h,
+            SvgPicture.asset(
+              icon,
+              height: 30.h,
+              colorFilter:
+                  ColorFilter.mode(context.colorScheme.text, BlendMode.srcIn),
             ),
             Text(
               text,
               style: constraints.maxWidth >= 600
                   ? TextStyle(
                       fontSize: 12.sp,
-                      // color: context.colorScheme.text,
+                      color: context.colorScheme.text,
                       fontWeight: FontWeight.normal,
                       // fontFamily: 'Gilroy',
                     )
                   : TextStyle(
                       fontSize: 15.sp,
-                      // color: context.colorScheme.text,
+                      color: context.colorScheme.text,
                       fontWeight: FontWeight.normal,
                       // fontFamily: 'Gilroy',
                     ),
