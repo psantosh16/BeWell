@@ -1,20 +1,20 @@
 import 'package:bewell/file_exporter.dart';
-part 'home_viewmodel.dart';
+part 'profile_viewmodel.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class ProfileView extends StatefulWidget {
+  const ProfileView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<ProfileView> createState() => _ProfileViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<HomeViewModel>.reactive(
-        viewModelBuilder: () => HomeViewModel(),
-        onViewModelReady: (model) => model.init(),
-        onDispose: (viewModel) => viewModel.disposeView(),
+    return ViewModelBuilder<ProfileViewModel>.reactive(
+        viewModelBuilder: () => ProfileViewModel(),
+        onViewModelReady: (model) {},
+        onDispose: (viewModel) {},
         disposeViewModel: true,
         builder: (context, model, child) {
           return Scaffold(
@@ -37,10 +37,10 @@ class _HomeViewState extends State<HomeView> {
                           ),
                           MaterialButton(
                             color: Colors.black,
-                            onPressed: () {},
-                            child: const Text(
-                              "Data",
-                              style: TextStyle(color: Colors.white),
+                            onPressed: model.incrementCounter,
+                            child: Text(
+                              model.counterLabel,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],

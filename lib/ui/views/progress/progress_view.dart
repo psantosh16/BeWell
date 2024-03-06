@@ -1,26 +1,26 @@
 import 'package:bewell/file_exporter.dart';
-part 'home_viewmodel.dart';
+part "progress_viewmodel.dart";
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class ProgressView extends StatefulWidget {
+  const ProgressView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<ProgressView> createState() => _ProgressViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _ProgressViewState extends State<ProgressView> {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<HomeViewModel>.reactive(
-        viewModelBuilder: () => HomeViewModel(),
-        onViewModelReady: (model) => model.init(),
-        onDispose: (viewModel) => viewModel.disposeView(),
+    return ViewModelBuilder<ProgressViewModel>.reactive(
+        viewModelBuilder: () => ProgressViewModel(),
+        onViewModelReady: (model) {},
+        onDispose: (viewModel) {},
         disposeViewModel: true,
         builder: (context, model, child) {
-          return Scaffold(
+          return const Scaffold(
             body: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -28,19 +28,11 @@ class _HomeViewState extends State<HomeView> {
                     children: [
                       Column(
                         children: [
-                          const Text(
+                          Text(
                             'Hello, STACKED!',
                             style: TextStyle(
                               fontSize: 35,
                               fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                          MaterialButton(
-                            color: Colors.black,
-                            onPressed: () {},
-                            child: const Text(
-                              "Data",
-                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
