@@ -29,8 +29,8 @@ class BottomNavView extends StatelessWidget {
                 enableFeedback: true,
                 type: BottomNavigationBarType.fixed,
                 backgroundColor: Colors.blue,
-                selectedItemColor: Colors.amber,
-                unselectedItemColor: Colors.black54,
+                // selectedItemColor: Colors.amber,
+                // unselectedItemColor: Colors.black54,
                 currentIndex: model.currentIndex,
                 onTap: (index) {
                   model.setIndex(index);
