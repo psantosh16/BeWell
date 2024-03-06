@@ -1,6 +1,8 @@
+import 'package:bewell/services/local_storage_service.dart';
 import 'package:bewell/ui/bottom_nav/bottom_nav_view.dart';
 import 'package:bewell/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:bewell/ui/dialogs/info_alert/info_alert_dialog.dart';
+import 'package:bewell/services/theme_service.dart';
 import 'package:bewell/ui/views/activity/activity_view.dart';
 import 'package:bewell/ui/views/home/home_view.dart';
 import 'package:bewell/ui/views/profile/profile_view.dart';
@@ -24,6 +26,9 @@ import 'package:stacked_services/stacked_services.dart';
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
+    LazySingleton(classType: ThemeService),
+    LazySingleton(classType: LocalStorageService),
+
     // @stacked-service
   ],
   bottomsheets: [
