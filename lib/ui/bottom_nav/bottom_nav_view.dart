@@ -30,8 +30,6 @@ class BottomNavView extends StatelessWidget {
                 enableFeedback: true,
                 type: BottomNavigationBarType.fixed,
                 backgroundColor: context.colorScheme.bottomNavBarBg,
-                // selectedItemColor: Colors.amber,
-                // unselectedItemColor: Colors.black54,
                 currentIndex: model.currentIndex,
                 onTap: (index) {
                   model.setIndex(index);
@@ -47,19 +45,19 @@ class BottomNavView extends StatelessWidget {
                     tooltip: 'Home',
                     icon: BottomNavInActiveIcon(
                       text: 'Home',
-                      icon: Icons.home_outlined,
+                      icon: Icons.home,
                     ),
                     label: '',
                   ),
                   BottomNavigationBarItem(
                     activeIcon: BottomNavActiveIcon(
                       text: 'Progress',
-                      icon: Icons.auto_graph,
+                      icon: FontAwesomeIcons.chartSimple,
                     ),
                     tooltip: 'Progress',
                     icon: BottomNavInActiveIcon(
                       text: 'Progress',
-                      icon: Icons.auto_graph_outlined,
+                      icon: FontAwesomeIcons.chartSimple,
                     ),
                     label: '',
                   ),
@@ -83,7 +81,7 @@ class BottomNavView extends StatelessWidget {
                     tooltip: 'Profile',
                     icon: BottomNavInActiveIcon(
                       text: 'Profile',
-                      icon: Icons.person_outlined,
+                      icon: Icons.person,
                     ),
                     label: '',
                   ),

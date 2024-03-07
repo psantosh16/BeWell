@@ -73,20 +73,20 @@ class BottomNavInActiveIcon extends ViewModelWidget<BottomNavViewModel> {
             Icon(
               icon,
               size: 30.h,
-              color: context.colorScheme.lightGrey.withOpacity(0.45),
+              color: context.colorScheme.unSelectedBottomNavIcon,
             ),
             Text(
               text,
               style: constraints.maxWidth >= 600
                   ? TextStyle(
                       fontSize: 12.sp,
-                      color: context.colorScheme.text,
+                      color: context.colorScheme.text.withOpacity(0.8),
                       fontWeight: FontWeight.normal,
                       // fontFamily: 'Gilroy',
                     )
                   : TextStyle(
                       fontSize: 15.sp,
-                      color: context.colorScheme.text,
+                      color: context.colorScheme.text.withOpacity(0.8),
                       fontWeight: FontWeight.normal,
                       // fontFamily: 'Gilroy',
                     ),
