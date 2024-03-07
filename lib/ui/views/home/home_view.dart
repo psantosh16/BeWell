@@ -23,13 +23,16 @@ class _HomeViewState extends State<HomeView> {
             body: SafeArea(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Center(
+                child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
+                          HomeSectionHeading(
+                            title: "mindful tracker",
+                          ),
                           MindfulTrackerCard(
                             imagePath: "assets/home/sleepy.png",
                             title: "Sleep Quality",
@@ -61,6 +64,7 @@ class _HomeViewState extends State<HomeView> {
                           SizedBox(
                             height: 20,
                           ),
+                          HomeSectionHeading(title: "mindful ai"),
                           MindfulAiCard()
                         ],
                       ),

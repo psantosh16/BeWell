@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class HomeSectionHeading extends StatelessWidget {
-  const HomeSectionHeading({super.key});
+  final String? title;
+  const HomeSectionHeading({super.key, this.title});
 
   @override
   Widget build(BuildContext context) {
-    return const Text("its subheading here");
+    return  Text(title??"subHeading");
   }
 }
 
