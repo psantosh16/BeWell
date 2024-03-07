@@ -1,7 +1,7 @@
 part of 'bottom_nav_view.dart';
 
 class BottomNavActiveIcon extends ViewModelWidget<BottomNavViewModel> {
-  final String icon;
+  final IconData icon;
   final String text;
   const BottomNavActiveIcon({
     required this.text,
@@ -15,32 +15,29 @@ class BottomNavActiveIcon extends ViewModelWidget<BottomNavViewModel> {
       return Container(
         width: constraints.maxWidth,
         height: constraints.maxWidth * 0.60,
-        decoration: const BoxDecoration(
-          color: Colors.transparent,
+        decoration: BoxDecoration(
+          color: context.colorScheme.primaryColor.withOpacity(0.12),
         ),
         child: Column(
           children: [
             const Spacer(),
             Icon(
-              Icons.abc,
+              icon,
               size: 30.h,
+              color: context.colorScheme.primaryColor,
             ),
-            // SvgPicture.asset(
-            //   icon,
-            //   height: 30.h,
-            // ),
             Text(
               text,
               style: constraints.maxWidth >= 600
                   ? TextStyle(
                       fontSize: 12.sp,
-                      color: Colors.blue,
+                      color: context.colorScheme.text,
                       fontWeight: FontWeight.bold,
                       // fontFamily: 'Gilroy',
                     )
                   : TextStyle(
                       fontSize: 15.sp,
-                      color: Colors.blue,
+                      color: context.colorScheme.text,
                       fontWeight: FontWeight.bold,
                       // fontFamily: 'Gilroy',
                     ),
@@ -53,7 +50,7 @@ class BottomNavActiveIcon extends ViewModelWidget<BottomNavViewModel> {
 }
 
 class BottomNavInActiveIcon extends ViewModelWidget<BottomNavViewModel> {
-  final String icon;
+  final IconData icon;
   final String text;
   const BottomNavInActiveIcon({
     required this.text,
@@ -67,35 +64,29 @@ class BottomNavInActiveIcon extends ViewModelWidget<BottomNavViewModel> {
       return Container(
         width: constraints.maxWidth,
         height: constraints.maxWidth * 0.60,
-        // MediaQuery.of(context).size.height * 0.065,
         decoration: const BoxDecoration(
           color: Colors.transparent,
         ),
         child: Column(
           children: [
             const Spacer(),
-            // SvgPicture.asset(
-            //   icon,
-            //   height: 30.h,
-            //   colorFilter:
-            //       ColorFilter.mode(context.colorScheme.text, BlendMode.srcIn),
-            // ),
             Icon(
-              Icons.abc_outlined,
+              icon,
               size: 30.h,
+              color: context.colorScheme.unSelectedBottomNavIcon,
             ),
             Text(
               text,
               style: constraints.maxWidth >= 600
                   ? TextStyle(
                       fontSize: 12.sp,
-                      // color: context.colorScheme.text,
+                      color: context.colorScheme.text.withOpacity(0.8),
                       fontWeight: FontWeight.normal,
                       // fontFamily: 'Gilroy',
                     )
                   : TextStyle(
                       fontSize: 15.sp,
-                      // color: context.colorScheme.text,
+                      color: context.colorScheme.text.withOpacity(0.8),
                       fontWeight: FontWeight.normal,
                       // fontFamily: 'Gilroy',
                     ),
