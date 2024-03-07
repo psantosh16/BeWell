@@ -2,7 +2,7 @@ part of 'bottom_nav_view.dart';
 
 class BottomNavViewModel extends IndexTrackingViewModel {
   void init() {
-    setIndex(1);
+    setIndex(0);
   }
 
   Future<bool> onPop() async {
@@ -12,9 +12,9 @@ class BottomNavViewModel extends IndexTrackingViewModel {
   Widget getViewForCurrentIndex(int index) {
     switch (index) {
       case 0:
-        return const ProgressView();
-      case 1:
         return const HomeView();
+      case 1:
+        return const ProgressView();
       case 2:
         return const ActivityView();
       case 3:
