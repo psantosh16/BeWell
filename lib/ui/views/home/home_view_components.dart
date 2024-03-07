@@ -85,3 +85,22 @@ class MindfulTrackerCard extends StatelessWidget {
     );
   }
 }
+
+class MindfulAiCard extends StatelessWidget {
+  const MindfulAiCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 239,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40),
+        image: const DecorationImage(
+          image: AssetImage('assets/home/aiCard.png'),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}

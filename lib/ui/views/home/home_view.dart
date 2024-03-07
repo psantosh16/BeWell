@@ -58,6 +58,10 @@ class _HomeViewState extends State<HomeView> {
                             actionButton: false,
                             backgroundColor: Color(0x59A18FFF),
                           ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          MindfulAiCard()
                         ],
                       ),
                     ],
