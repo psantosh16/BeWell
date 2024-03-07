@@ -1,4 +1,5 @@
 import 'package:bewell/file_exporter.dart';
+import 'package:bewell/ui/views/home/home_view_components.dart';
 part 'home_viewmodel.dart';
 
 class HomeView extends StatefulWidget {
@@ -17,10 +18,11 @@ class _HomeViewState extends State<HomeView> {
         onDispose: (viewModel) => viewModel.disposeView(),
         disposeViewModel: true,
         builder: (context, model, child) {
-          return Scaffold(
+          return const Scaffold(
+            backgroundColor: Colors.white,
             body: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -28,20 +30,33 @@ class _HomeViewState extends State<HomeView> {
                     children: [
                       Column(
                         children: [
-                          const Text(
-                            'Hello, STACKED!',
-                            style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.w900,
-                            ),
+                          MindfulTrackerCard(
+                            imagePath: "assets/home/sleepy.png",
+                            title: "Sleep Quality",
+                            subtitle: "7.00 Hrs",
+                            actionButton: true,
+                            backgroundColor: Color(0x59A18FFF),
                           ),
-                          MaterialButton(
-                            color: Colors.black,
-                            onPressed: () {},
-                            child: const Text(
-                              "Data",
-                              style: TextStyle(color: Colors.white),
-                            ),
+                          MindfulTrackerCard(
+                            imagePath: "assets/home/book.png",
+                            title: "Mindful Journal",
+                            subtitle: "64 Days Streak",
+                            actionButton: false,
+                            backgroundColor: Color(0x59A18FFF),
+                          ),
+                          MindfulTrackerCard(
+                            imagePath: "assets/home/Disappointed.png",
+                            title: "Stress Level",
+                            subtitle: "It's Normal",
+                            actionButton: false,
+                            backgroundColor: Color(0x59A18FFF),
+                          ),
+                          MindfulTrackerCard(
+                            imagePath: "assets/home/headphone.png",
+                            title: "Mood Tracker",
+                            subtitle: "neutral",
+                            actionButton: false,
+                            backgroundColor: Color(0x59A18FFF),
                           ),
                         ],
                       ),
