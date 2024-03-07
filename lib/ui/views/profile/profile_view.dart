@@ -17,35 +17,17 @@ class _ProfileViewState extends State<ProfileView> {
         onDispose: (viewModel) {},
         disposeViewModel: true,
         builder: (context, model, child) {
-          return Scaffold(
+          return const Scaffold(
             body: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
                 child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          const Text(
-                            'Hello, STACKED!',
-                            style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                          MaterialButton(
-                            color: Colors.black,
-                            onPressed: model.incrementCounter,
-                            child: Text(
-                              model.counterLabel,
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  child: Text(
+                    'Profile',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ),
               ),

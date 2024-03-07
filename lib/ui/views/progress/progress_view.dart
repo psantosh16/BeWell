@@ -22,22 +22,12 @@ class _ProgressViewState extends State<ProgressView> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.0),
                 child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            'Hello, STACKED!',
-                            style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  child: Text(
+                    'Progress',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ),
               ),

@@ -1,7 +1,7 @@
 part of 'bottom_nav_view.dart';
 
 class BottomNavActiveIcon extends ViewModelWidget<BottomNavViewModel> {
-  final String icon;
+  final IconData icon;
   final String text;
   const BottomNavActiveIcon({
     required this.text,
@@ -15,30 +15,29 @@ class BottomNavActiveIcon extends ViewModelWidget<BottomNavViewModel> {
       return Container(
         width: constraints.maxWidth,
         height: constraints.maxWidth * 0.60,
-        decoration: const BoxDecoration(
-          color: Colors.transparent,
+        decoration: BoxDecoration(
+          color: context.colorScheme.primaryColor.withOpacity(0.12),
         ),
         child: Column(
           children: [
             const Spacer(),
-            SvgPicture.asset(
+            Icon(
               icon,
-              height: 30.h,
-              colorFilter:
-                  ColorFilter.mode(context.colorScheme.text, BlendMode.srcIn),
+              size: 30.h,
+              color: context.colorScheme.primaryColor,
             ),
             Text(
               text,
               style: constraints.maxWidth >= 600
                   ? TextStyle(
                       fontSize: 12.sp,
-                      color: Colors.blue,
+                      color: context.colorScheme.text,
                       fontWeight: FontWeight.bold,
                       // fontFamily: 'Gilroy',
                     )
                   : TextStyle(
                       fontSize: 15.sp,
-                      color: Colors.blue,
+                      color: context.colorScheme.text,
                       fontWeight: FontWeight.bold,
                       // fontFamily: 'Gilroy',
                     ),
@@ -51,7 +50,7 @@ class BottomNavActiveIcon extends ViewModelWidget<BottomNavViewModel> {
 }
 
 class BottomNavInActiveIcon extends ViewModelWidget<BottomNavViewModel> {
-  final String icon;
+  final IconData icon;
   final String text;
   const BottomNavInActiveIcon({
     required this.text,
@@ -71,11 +70,10 @@ class BottomNavInActiveIcon extends ViewModelWidget<BottomNavViewModel> {
         child: Column(
           children: [
             const Spacer(),
-            SvgPicture.asset(
+            Icon(
               icon,
-              height: 30.h,
-              colorFilter:
-                  ColorFilter.mode(context.colorScheme.text, BlendMode.srcIn),
+              size: 30.h,
+              color: context.colorScheme.lightGrey.withOpacity(0.45),
             ),
             Text(
               text,

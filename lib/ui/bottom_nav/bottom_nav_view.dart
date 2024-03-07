@@ -1,5 +1,5 @@
 import 'package:bewell/file_exporter.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 part 'bottom_nav_view_model.dart';
 part 'bottom_nav_view_components.dart';
 
@@ -41,49 +41,49 @@ class BottomNavView extends StatelessWidget {
                 items: const [
                   BottomNavigationBarItem(
                     activeIcon: BottomNavActiveIcon(
-                      text: 'Progress',
-                      icon: "assets/icons/navabr/progress.svg",
-                    ),
-                    tooltip: 'Progress',
-                    icon: BottomNavInActiveIcon(
-                      text: 'Progress',
-                      icon: "assets/icons/navabr/progress.svg",
-                    ),
-                    label: '',
-                  ),
-                  BottomNavigationBarItem(
-                    activeIcon: BottomNavActiveIcon(
                       text: 'Home',
-                      icon: "assets/icons/navabr/home.svg",
+                      icon: Icons.home,
                     ),
                     tooltip: 'Home',
                     icon: BottomNavInActiveIcon(
                       text: 'Home',
-                      icon: "assets/icons/navabr/home.svg",
+                      icon: Icons.home_outlined,
+                    ),
+                    label: '',
+                  ),
+                  BottomNavigationBarItem(
+                    activeIcon: BottomNavActiveIcon(
+                      text: 'Progress',
+                      icon: Icons.auto_graph,
+                    ),
+                    tooltip: 'Progress',
+                    icon: BottomNavInActiveIcon(
+                      text: 'Progress',
+                      icon: Icons.auto_graph_outlined,
                     ),
                     label: '',
                   ),
                   BottomNavigationBarItem(
                     activeIcon: BottomNavActiveIcon(
                       text: 'Activity',
-                      icon: "assets/icons/navabr/activity.svg",
+                      icon: FontAwesomeIcons.personRunning,
                     ),
                     tooltip: 'Activity',
                     icon: BottomNavInActiveIcon(
                       text: 'Activity',
-                      icon: "assets/icons/navabr/activity.svg",
+                      icon: FontAwesomeIcons.personRunning,
                     ),
                     label: '',
                   ),
                   BottomNavigationBarItem(
                     activeIcon: BottomNavActiveIcon(
                       text: 'Profile',
-                      icon: "assets/icons/navabr/profile.svg",
+                      icon: Icons.person,
                     ),
                     tooltip: 'Profile',
                     icon: BottomNavInActiveIcon(
                       text: 'Profile',
-                      icon: "assets/icons/navabr/profile.svg",
+                      icon: Icons.person_outlined,
                     ),
                     label: '',
                   ),
