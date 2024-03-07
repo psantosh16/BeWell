@@ -1,3 +1,4 @@
+import 'package:bewell/file_exporter.dart';
 import 'package:flutter/material.dart';
 
 class HomeSectionHeading extends StatelessWidget {
@@ -6,7 +7,26 @@ class HomeSectionHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Text(title??"subHeading");
+    return SizedBox(
+      width: double.infinity,
+      child: Row(
+        children: [
+          const Image(
+            image: AssetImage("assets/home/verified.png"),
+            width: 25,
+          ),
+          const SizedBox(
+            width: 12,
+          ),
+          Text(title ?? "subHeading",
+              textAlign: TextAlign.left,
+              style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black)),
+        ],
+      ),
+    );
   }
 }
 
@@ -101,6 +121,51 @@ class MindfulAiCard extends StatelessWidget {
           image: AssetImage('assets/home/aiCard.png'),
           fit: BoxFit.cover,
         ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image(
+                width: 60,
+                height: 60,
+                image: AssetImage('assets/home/mindfulAi.png'),
+              ),
+              SizedBox(
+                width: 14,
+              ),
+              Text(
+                "Mindful AI",
+                style: TextStyle(fontSize: 44, fontWeight: FontWeight.w600),
+              )
+            ],
+          ),
+          const SizedBox(
+            child: Text(
+              "Chat with our AI,\n get insights of yours",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          Container(
+            width: 90,
+            height: 35,
+            margin: const EdgeInsets.only(top: 27),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              color: Colors.black,
+            ),
+            child: const Center(
+              child: Text("Let's Go!",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700)),
+            ),
+          )
+        ],
       ),
     );
   }
