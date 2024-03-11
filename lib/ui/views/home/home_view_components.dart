@@ -176,9 +176,11 @@ class HomeTestCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final FontThemeClass fontTheme = FontThemeClass();
+
     return Container(
       width: 280.w,
-      height: 220.h,
+      height: 240.h,
       margin: EdgeInsets.only(right: 20.w),
       child: Column(
         children: [
@@ -192,7 +194,10 @@ class HomeTestCard extends StatelessWidget {
             ),
           ),
           12.verticalSpace,
-          Text(text),
+          Text(
+            text,
+            style: fontTheme.title2(context),
+          ),
         ],
       ),
     );

@@ -39,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
                       ),
                       10.verticalSpace,
                       SizedBox(
-                        height: 220.h,
+                        height: 240.h,
                         child: ListView.builder(
                             physics: const BouncingScrollPhysics(),
                             itemCount: model.tests.length,
