@@ -31,7 +31,6 @@ flutter:
   uses-material-design: true
 
 
-assets:
-    - assets/icons/navbar/
-    - assets/home/    
+  assets:
+      - assets/home/    
 

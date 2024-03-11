@@ -14,8 +14,8 @@ extension ColorSchemeExtension on ColorScheme {
   Color get text => brightness == Brightness.dark ? white : black;
 
   // Navigation Bar
-  Color get bottomNavBarBg => Color.fromARGB(255, 224, 217, 255);
-  Color get unSelectedBottomNavIcon => const Color(0xFFA0A0A0);
+  Color get bottomNavBarBg => const Color.fromARGB(255, 224, 217, 255);
+  Color get unSelectedBottomNavIcon => primaryColor.withOpacity(0.5);
   Color get selectedBottomNavIcon => primaryColor;
   Color get selectedBottomNavIconbg => primaryColor.withOpacity(0.4);
 

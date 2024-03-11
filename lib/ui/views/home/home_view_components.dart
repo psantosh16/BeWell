@@ -6,7 +6,7 @@ class HomeSectionHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Text(title??"subHeading");
+    return Text(title ?? "subHeading");
   }
 }
 
