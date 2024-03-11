@@ -1,14 +1,4 @@
-import 'package:flutter/material.dart';
-
-class HomeSectionHeading extends StatelessWidget {
-  final String? title;
-  const HomeSectionHeading({super.key, this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(title ?? "subHeading");
-  }
-}
+part of "home_view.dart";
 
 class MindfulTrackerCard extends StatelessWidget {
   final String imagePath;
@@ -101,6 +91,109 @@ class MindfulAiCard extends StatelessWidget {
           image: AssetImage('assets/home/aiCard.png'),
           fit: BoxFit.cover,
         ),
+      ),
+    );
+  }
+}
+
+class HomeSectionDivider extends StatelessWidget {
+  final String title;
+  const HomeSectionDivider({
+    super.key,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final FontThemeClass fontTheme = FontThemeClass();
+    return Row(
+      children: [
+        const CheckBadge(),
+        8.horizontalSpace,
+        Text(
+          title,
+          style: fontTheme.subTitle(
+            context,
+            color: context.colorScheme.grey,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class CheckBadge extends StatelessWidget {
+  const CheckBadge({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Icon(
+          FontAwesomeIcons.certificate,
+          color: Colors.amber.shade800,
+        ),
+        const Icon(
+          FontAwesomeIcons.check,
+          color: Colors.white,
+          size: 12,
+        ),
+      ],
+    );
+  }
+}
+
+class UserGreetings extends StatelessWidget {
+  const UserGreetings({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: ClipRRect(
+          borderRadius: BorderRadius.circular(200).r,
+          child: Image.network("https://picsum.photos/200")),
+      title: Text(
+        "Good Morning,",
+        style: FontThemeClass().title(context),
+      ),
+      subtitle: Text(
+        "Hemant Sakunde",
+        style: FontThemeClass().subTitle(context),
+      ),
+    );
+  }
+}
+
+class HomeTestCard extends StatelessWidget {
+  final String image;
+  final String text;
+  const HomeTestCard({super.key, required this.image, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 280.w,
+      height: 220.h,
+      margin: EdgeInsets.only(right: 20.w),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12).r,
+            child: Image.network(
+              image,
+              fit: BoxFit.cover,
+              height: 185.h,
+              width: 280.w,
+            ),
+          ),
+          12.verticalSpace,
+          Text(text),
+        ],
       ),
     );
   }

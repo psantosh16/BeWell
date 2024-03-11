@@ -1,8 +1,8 @@
 import 'package:bewell/file_exporter.dart';
 import 'package:bewell/ui/theme/app_font.dart';
-import 'package:bewell/ui/views/home/home_view_components.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 part 'home_viewmodel.dart';
+part 'home_view_components.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -20,7 +20,7 @@ class _HomeViewState extends State<HomeView> {
         onDispose: (viewModel) => viewModel.disposeView(),
         disposeViewModel: true,
         builder: (context, model, child) {
-          final FontThemeClass fontTheme = FontThemeClass();
+          // final FontThemeClass fontTheme = FontThemeClass();
           return Scaffold(
             backgroundColor: Colors.white,
             body: SafeArea(
@@ -33,18 +33,9 @@ class _HomeViewState extends State<HomeView> {
                     children: [
                       20.verticalSpace,
                       const UserGreetings(),
-                      Row(
-                        children: [
-                          const CheckBadge(),
-                          8.horizontalSpace,
-                          Text(
-                            "Take your test",
-                            style: fontTheme.subTitle(
-                              context,
-                              color: context.colorScheme.grey,
-                            ),
-                          ),
-                        ],
+                      20.verticalSpace,
+                      const HomeSectionDivider(
+                        title: "Take Your Test",
                       ),
                       10.verticalSpace,
                       SizedBox(
@@ -61,7 +52,7 @@ class _HomeViewState extends State<HomeView> {
                             }),
                       ),
                       20.verticalSpace,
-                      const HomeSectionHeading(
+                      const HomeSectionDivider(
                         title: "Mindful tracker",
                       ),
                       const MindfulTrackerCard(
@@ -95,7 +86,9 @@ class _HomeViewState extends State<HomeView> {
                       const SizedBox(
                         height: 20,
                       ),
-                      const HomeSectionHeading(title: "Mindful ai"),
+                      const HomeSectionDivider(
+                        title: "Mindful AI",
+                      ),
                       const MindfulAiCard()
                     ],
                   ),
@@ -104,82 +97,5 @@ class _HomeViewState extends State<HomeView> {
             ),
           );
         });
-  }
-}
-
-class CheckBadge extends StatelessWidget {
-  const CheckBadge({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Icon(
-          FontAwesomeIcons.certificate,
-          color: Colors.amber.shade800,
-        ),
-        const Icon(
-          FontAwesomeIcons.check,
-          color: Colors.white,
-          size: 12,
-        ),
-      ],
-    );
-  }
-}
-
-class UserGreetings extends StatelessWidget {
-  const UserGreetings({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: ClipRRect(
-          borderRadius: BorderRadius.circular(200).r,
-          child: Image.network("https://picsum.photos/200")),
-      title: Text(
-        "Good Morning,",
-        style: FontThemeClass().title(context),
-      ),
-      subtitle: Text(
-        "Hemant Sakunde",
-        style: FontThemeClass().subTitle(context),
-      ),
-    );
-  }
-}
-
-class HomeTestCard extends StatelessWidget {
-  final String image;
-  final String text;
-  const HomeTestCard({super.key, required this.image, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 280.w,
-      height: 220.h,
-      margin: EdgeInsets.only(right: 20.w),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12).r,
-            child: Image.network(
-              image,
-              fit: BoxFit.cover,
-              height: 185.h,
-              width: 280.w,
-            ),
-          ),
-          12.verticalSpace,
-          Text(text),
-        ],
-      ),
-    );
   }
 }
