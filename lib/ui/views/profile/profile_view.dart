@@ -33,7 +33,7 @@ class _ProfileViewState extends State<ProfileView> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(500).r,
                           child: Image.network(
-                            "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg",
+                            model.userImage,
                           ),
                         ),
                       ),

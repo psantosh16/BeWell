@@ -19,17 +19,8 @@ class _ProgressViewState extends State<ProgressView> {
         builder: (context, model, child) {
           return const Scaffold(
             body: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Center(
-                  child: Text(
-                    'Progress',
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                ),
+              child: Center(
+                child: Text("Progress View"),
               ),
             ),
           );

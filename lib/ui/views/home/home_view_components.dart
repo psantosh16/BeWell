@@ -1,34 +1,6 @@
-import 'package:bewell/file_exporter.dart';
-import 'package:flutter/material.dart';
 
-class HomeSectionHeading extends StatelessWidget {
-  final String? title;
-  const HomeSectionHeading({super.key, this.title});
+part of "home_view.dart";
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: Row(
-        children: [
-          const Image(
-            image: AssetImage("assets/home/verified.png"),
-            width: 25,
-          ),
-          const SizedBox(
-            width: 12,
-          ),
-          Text(title ?? "subHeading",
-              textAlign: TextAlign.left,
-              style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black)),
-        ],
-      ),
-    );
-  }
-}
 
 class MindfulTrackerCard extends StatelessWidget {
   final String imagePath;
@@ -165,6 +137,114 @@ class MindfulAiCard extends StatelessWidget {
                       fontWeight: FontWeight.w700)),
             ),
           )
+        ],
+      ),
+    );
+  }
+}
+
+class HomeSectionDivider extends StatelessWidget {
+  final String title;
+  const HomeSectionDivider({
+    super.key,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final FontThemeClass fontTheme = FontThemeClass();
+    return Row(
+      children: [
+        const CheckBadge(),
+        8.horizontalSpace,
+        Text(
+          title,
+          style: fontTheme.subTitle(
+            context,
+            color: context.colorScheme.grey,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class CheckBadge extends StatelessWidget {
+  const CheckBadge({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Icon(
+          FontAwesomeIcons.certificate,
+          color: Colors.amber.shade800,
+        ),
+        const Icon(
+          FontAwesomeIcons.check,
+          color: Colors.white,
+          size: 12,
+        ),
+      ],
+    );
+  }
+}
+
+class UserGreetings extends StatelessWidget {
+  const UserGreetings({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: ClipRRect(
+          borderRadius: BorderRadius.circular(200).r,
+          child: Image.network("https://picsum.photos/200")),
+      title: Text(
+        "Good Morning,",
+        style: FontThemeClass().title(context),
+      ),
+      subtitle: Text(
+        "Hemant Sakunde",
+        style: FontThemeClass().subTitle(context),
+      ),
+    );
+  }
+}
+
+class HomeTestCard extends StatelessWidget {
+  final String image;
+  final String text;
+  const HomeTestCard({super.key, required this.image, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    final FontThemeClass fontTheme = FontThemeClass();
+
+    return Container(
+      width: 280.w,
+      height: 240.h,
+      margin: EdgeInsets.only(right: 20.w),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12).r,
+            child: Image.network(
+              image,
+              fit: BoxFit.cover,
+              height: 185.h,
+              width: 280.w,
+            ),
+          ),
+          12.verticalSpace,
+          Text(
+            text,
+            style: fontTheme.title2(context),
+          ),
         ],
       ),
     );
