@@ -31,7 +31,7 @@ class _HomeViewState extends State<HomeView> {
                       Column(
                         children: [
                           HomeSectionHeading(
-                            title: "mindful tracker",
+                            title: "Mindful Tracker",
                           ),
                           MindfulTrackerCard(
                             imagePath: "assets/home/sleepy.png",
@@ -64,7 +64,10 @@ class _HomeViewState extends State<HomeView> {
                           SizedBox(
                             height: 20,
                           ),
-                          HomeSectionHeading(title: "mindful ai"),
+                          HomeSectionHeading(title: "Mindful AI"),
+                          SizedBox(
+                            height: 20,
+                          ),
                           MindfulAiCard()
                         ],
                       ),

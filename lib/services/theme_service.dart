@@ -1,5 +1,4 @@
 import 'package:bewell/file_exporter.dart';
-import 'package:bewell/services/local_storage_service.dart';
 
 @lazySingleton
 class ThemeService {
