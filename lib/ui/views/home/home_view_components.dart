@@ -201,6 +201,7 @@ class UserGreetings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       leading: ClipRRect(
           borderRadius: BorderRadius.circular(200).r,
           child: Image.network("https://picsum.photos/200")),
