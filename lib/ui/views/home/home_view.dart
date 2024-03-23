@@ -36,6 +36,7 @@ class _HomeViewState extends State<HomeView> {
                       20.verticalSpace,
                       const HomeSectionDivider(
                         title: "Take Your Test",
+
                       ),
                       10.verticalSpace,
                       SizedBox(
